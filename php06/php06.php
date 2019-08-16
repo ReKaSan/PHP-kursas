@@ -13,6 +13,6 @@ if ($metai >= $cities3['Vasingtonas'][1]) {
 elseif ($metai == 1774) {
     echo 'JAV sostinė vis dar Filadelfijoje.';
 }
-else echo 'Liko ', ($cities3['Vasingtonas'][1] - $metai), ' metai (-ų) iki Vašingtono įkūrimo.';
+else echo 'Liko ' . ($cities3['Vasingtonas'][1] - $metai) . ' metai (-ų) iki Vašingtono įkūrimo.';
 ?>
 
