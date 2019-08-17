@@ -7,23 +7,28 @@
     <title></title>
 </head>
 
+
 <body>
+    <?php
+    if(isset($_REQUEST['submit'])){
+    if($_REQUEST['vardas'] and $_REQUEST['pavarde']) {
+        if(preg_match("/[^A-Za-z'-]/", $_REQUEST['vardas'] or $_REQUEST['pavarde'])) {
+           echo "Vardas: ". $_REQUEST['vardas'] . ' <br>' . "Pavarde: ". $_REQUEST['pavarde'];
+        exit();
+        }
+    }
+        else {
+        die("Neteisingai ivesta");
+        }
+    }
+    ?>
+
     <form action="<?php $_PHP_SELF; ?>" method="POST">
         Vardas: <input type="text" name="vardas" value="" />
         Pavarde: <input type="text" name="pavarde" value="" />
         <input type="submit" name="submit" value="submit">
     </form>
 
-    <?php
-    if($_POST['vardas'] && $_POST['pavarde']) {
-        echo "Vardas: ". $_POST['vardas'] . ' <br>' . "Pavarde: ". $_POST['pavarde'];
-    }
- else {
-        if(preg_match("/[^A-Za-z'-]/", $_POST['vardas'] or $_POST['pavarde'])) {
-        die("Neteisingai ivesta");
-        }
-    }
-    ?>
 </body>
 
 </html>
